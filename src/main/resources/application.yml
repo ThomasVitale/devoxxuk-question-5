@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: devoxxuk-question-5
+  redis:
+    host: localhost
+    port: 6379
+
+game:
+  eventing:
+    enabled: false
+    broker-uri: http://broker-ingress.knative-eventing.svc.cluster.local/default/default
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true

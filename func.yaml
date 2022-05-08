@@ -1,0 +1,33 @@
+version: 0.19.0
+name: devoxxuk-question-5
+namespace: ""
+runtime: springboot
+registry: ""
+image: ghcr.io/thomasvitale/devoxxuk-question-5:latest
+imageDigest: sha256:6b1ff1a87062fc76b4d93141f07e79ef32bc8f4b1fd9054b49506062cfb0468e
+build: local
+git: {}
+builder: gcr.io/paketo-buildpacks/builder:tiny
+builders:
+  default: gcr.io/paketo-buildpacks/builder:tiny
+buildpacks: []
+volumes: []
+buildEnvs:
+- name: BP_NATIVE_IMAGE
+  value: "true"
+- name: BP_JVM_VERSION
+  value: "17"
+envs:
+- name: SPRING_REDIS_HOST
+  value: ""
+- name: SPRING_REDIS_PASSWORD
+  value: ""
+annotations: {}
+options: {}
+labels: []
+healthEndpoints:
+  liveness: /actuator/health/liveness
+  readiness: /actuator/health/readiness
+created: 2022-04-18T16:32:33.808769+02:00
+invocation:
+  format: http
